@@ -50,6 +50,7 @@ public:
             }
         }
         string result = s.substr(min_left, min_size);
+        //判断窗口大小应小于s的大小
         return min_size > s.size() ? "" : result;
     }
 };
