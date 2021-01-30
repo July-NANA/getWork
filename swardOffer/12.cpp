@@ -20,8 +20,6 @@ public:
         }
         return false;
     }
-
-private:
     int rows, columns;
     // 当前元素在矩阵 board 中的行列索引 i 和 j ，当前目标字符在 word 中的索引 k
     bool dfs(vector<vector<char>> &board, string word, int i, int j, int k)
