@@ -15,8 +15,36 @@ f(8)=2*3*3=18=3*f(5)
 class Solution
 {
 public:
+    //  求 (x^a) % p —— 循环求余法
+    // int remainder(int x, int a, int p)
+    // {
+    //     int rem = 1;
+    //     for (int i = 0; i < a; i++)
+    //     {
+    //         rem = (rem * x) % p;
+    //     }
+    //     return rem;
+    // }
+
+    // 快速幂求余
+    int remainder(int x, int a, int p)
+    {
+        long rem = 1;
+        while (a > 0)
+        {
+            if (a % 2 == 1)
+            {
+                /* code */
+                rem = (rem * x) % p;
+            }
+            x = (x * x) % p;
+            a = a / 2;
+        }
+        return (int)(rem % p);
+    }
     int cuttingRope(int n)
     {
+        int p = 1000000007;
         if (n == 2)
         {
             return 1;
@@ -25,7 +53,6 @@ public:
         {
             return 2;
         }
-
         int num_3 = 0, num_2 = 0;
         num_3 = n / 3;
         if (n % 3 == 1)
@@ -38,8 +65,7 @@ public:
             ++num_2;
         }
         int max = 0;
-
-        max = pow(3, num_3) * pow(2, num_2);
+        max = remainder(3, num_3, p) * remainder(2, num_2, p);
         return max;
     }
 };
