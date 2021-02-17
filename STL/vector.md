@@ -26,6 +26,15 @@
     data.pop_back(); // Remove the last element
 ```
 
+**erase** 删除：
+
+```
+    //删除单个元素，从0开始计数，删除第二个元素
+    v.erase(v.begin()+2);
+    //删除一段元素，删除迭代器第一到第五区间所有元素
+    v.erase(v.begin()+1,v.begin()+5);
+```
+
 ## 容器大小
 
 ```

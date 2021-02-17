@@ -1,6 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
 int main()
 {
     unordered_map<char, int> dic;
@@ -12,11 +19,13 @@ int main()
     dic.insert({'e', 5});
     dic.insert(make_pair('c', 3));
     dic.insert(make_pair('d', 4));
+    dic.insert(pair('h', 7));
     dic['f'] = 6;
     // for (unordered_map<char, int>::iterator it = dic.begin(); it != dic.end(); it++)
     // {
     //     cout << (*it).first << (*it).second << endl;
     // }
-    cout << dic['e'] << endl;
+    cout << dic['h'] << endl;
+
     return 0;
 }
